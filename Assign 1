@@ -1,0 +1,74 @@
+package assignment1;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author PC
+ */
+public class Assignment1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        {
+        {
+       final int CurrentYear = 2020 ;
+       
+       String ic = JOptionPane.showInputDialog("Please Enter Your IC Number ");
+       // 0 1 2 3 4 5 6 7 8 9 10 
+       // 0 1 0 6 2 5 0 3 0 7 4 4
+       
+       String year = ic.substring(0,2);
+       String month = ic.substring(2,4);
+       String day = ic.substring(4,6);
+       
+       if (Integer.parseInt(year) > 20)
+           year = 19 + year;
+       else
+           year = 20+year;
+       
+       JOptionPane.showMessageDialog(null,"Your Birth Date Is " + day + "-" + month + "-" +year);
+       int intyear = Integer.parseInt(year);
+       JOptionPane.showMessageDialog(null, "Your Age Is " + (CurrentYear-intyear));
+    } 
+        {
+        String input = JOptionPane.showInputDialog("Please Enter Your Words ");
+        StringBuffer newStr = new StringBuffer(input);
+        
+        for(int i = 0; i < input.length(); i++ ) {
+            newStr.setCharAt(i, Character.toUpperCase(input.charAt(i)));            
+        
+        
+            if(Character.isLowerCase(input.charAt(i))) {
+                newStr.setCharAt(i, Character.toUpperCase(input.charAt(i)));
+            }
+        
+            else if (Character.isUpperCase(input.charAt(i))) {
+                newStr.setCharAt(i, Character.toLowerCase(input.charAt(i)));       
+            }
+        }
+        JOptionPane.showMessageDialog(null,"" + newStr);
+    }
+        
+       {
+        String rad = JOptionPane.showInputDialog("Please Enter Radius : ");
+        
+        double radNum = Double.parseDouble(rad);
+        double diameter , circumference , area;
+        final double pi = 3.14159;
+        
+        diameter = 2*radNum ;
+        JOptionPane.showMessageDialog(null, "The Diameter Of the Circle is " + diameter);
+        
+        circumference = 2*pi*radNum ;
+        JOptionPane.showMessageDialog(null, " The Circumference of the circle " + circumference);
+        
+        area = pi*radNum*radNum ;
+        JOptionPane.showMessageDialog(null, "The Area Of The Circle " + area);
+    }
+   
+}}
+}
